@@ -12,7 +12,8 @@ header {
 }
 .header-content {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   gap: 1rem;
   align-items: center;
   padding: 1.5rem 1rem;
@@ -20,6 +21,8 @@ header {
 
 .header-content img {
   width: 100%;
+  grid-column: 1;
+  grid-row: 1;
   max-width: 8rem;
   border-radius: 1rem;
   padding: 0;
@@ -27,16 +30,20 @@ header {
 
 .header-text {
   border: none;
+  display: contents;
   background: transparent;
 }
 
 .header-text h1 {
+  grid-column: 2;
+  grid-row: 1;
   text-align: left;
   background: transparent;
 }
 
-.sub-text {
+.header-text p {
   grid-column: 1 / -1;
+  grid-row: 2;
   text-align: center;
   padding: 0.5rem 0 0 0;
 }
@@ -109,7 +116,7 @@ article p a {
   background-color: #5aa9c9;
   border-radius: 0.75rem;
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: 600;
   margin-top: 1rem;
   transition: background-color 0.2s ease, transform 0.1s ease;
