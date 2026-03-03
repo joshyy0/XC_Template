@@ -271,19 +271,17 @@ home_html += f"""
     <ul id="roster-list" class="roster-list" hidden>
 """
 
-roster = {}  
+roster = {}
 # key = runner name
-# value = profile html filename
-
-# WILL NEED JAVASCRIPT TO SHOW/HIDE TOGGLED TEAM ROSTER
+# value = full athlete page path
 
 for meet_name, (meet_date, skyline, race_html) in recent_races.items():
     for r in skyline:
         name = safe_get(r, "Name")
+        athlete_id = safe_get(r, "Profile Pic").replace(".jpg", "").replace(".jpeg", "")
 
-        if name not in roster:
-            slug = name.lower().replace(" ", "-")
-            roster[name] = f"{slug}.html"
+        if name and athlete_id and name not in roster:
+            roster[name] = f"mens_team/{name}{athlete_id}.html"
 
 for name in sorted(roster):
     link = roster[name]
