@@ -1,0 +1,170 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*background-color: rgb(146, 221, 248);*/
+    
+}
+
+/*Header*/
+header {
+    background-color: rgb(146, 221, 248);
+}
+.header-content img {
+    width: 80%;
+    border-radius: 30%;
+    margin: auto;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    background-color: rgb(146, 221, 248);
+}
+
+.sub-text{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    background-color: rgb(146, 221, 248);
+}
+
+.header-text h1{
+    text-align: center;
+    background-color: white;
+}
+
+.header-text {
+    background-color: white;
+    border: 0.2rem solid black;
+}
+
+/* Articles */
+main {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    background-color: rgb(146, 221, 248);
+}
+
+article {
+    border: 0.1rem solid gray;
+    margin: 5% 5% 10% 5%;
+    background-color: white;
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+    border-radius: 5%;
+    padding: 5%;
+}
+
+article:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.12);
+}
+
+article h2 {
+    width: 95%;
+    margin: auto;
+}
+
+article dl {
+  margin-top: 1rem;
+}
+
+article dt {
+  margin-top: 0.75rem;
+}
+
+article dt a {
+  display: block;
+  padding: 0.6em 1em;
+  background-color: #c4e6fa;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Time  */
+article dd {
+  margin: 0.25rem 0 0.75rem 0;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Hover / Tap effect */
+article dt a:hover,
+article dt a:focus {
+  background-color: rgb(50, 155, 193);
+}
+
+article dt a:active {
+  transform: scale(0.98);
+}
+
+article p a {
+  display: block;
+  padding: 0.6em 1em;
+  background-color: #58b5eb;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* Hover / Tap effect */
+article p a:hover,
+article p a:focus {
+  background-color: rgb(50, 155, 193);
+}
+
+article p a:active {
+  transform: scale(0.98);
+}
+
+/* Roster */
+.roster-section {
+    text-align: center;
+    padding: 1.5rem 1rem;
+}
+
+.roster-toggle {
+  background-color: lightblue;
+  border: none;
+  padding: 0.75em 1.5em;
+  border-radius: 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.roster-toggle:hover,
+.roster-toggle:focus {
+  background-color: #5aa9c9;
+}
+
+.roster-toggle:active {
+  transform: scale(0.98);
+}
+
+.roster-list {
+  list-style: none;
+  margin-top: 1.5rem;
+  padding: 0;
+  text-align: left;
+}
+
+.roster-list li {
+  margin-bottom: 0.75rem;
+}
+
+.roster-list a {
+  display: block;
+  padding: 0.75em 1em;
+  background-color: #f4fbff;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover Effect */
+.roster-list a:hover,
+.roster-list a:focus {
+  background-color: lightblue;
+}

@@ -3,17 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Skyline Cross Country Home Page</title>
 </head>
+
+<body>
 
 <header>
   <div class="header-content">
     <img src="https://resources.finalsite.net/images/f_auto,q_auto/v1695416665/a2schoolsorg/udbk8bxpqrgvjkwteeut/SkylineHighSchoolPrimaryThumbnailImage.jpg" alt="Skyline High School logo">
     <div class="header-text">
       <h1>Ann Arbor Skyline Cross Country</h1>
-      <p>Welcome to the home for Ann Arbor Skyline Cross Country. Find information on recent races, individual stats, and more.</p>
-    </div>
+     </div>
+     <div class="sub-text">
+       <p>Welcome to the home for Ann Arbor Skyline Cross Country. Find information on recent races, individual stats, and more.</p>
+     </div>
   </div>
 </header>
 
@@ -404,7 +409,7 @@
 
 <section class="roster-section">
   <button class="roster-toggle" aria-expanded="false" aria-controls="roster-list">
-    Show/Hide Roster
+    Show/Hide Full Roster
   </button>
 
     <ul id="roster-list" class="roster-list" hidden>
@@ -691,3 +696,22 @@
 <footer>
     <p>All data gathered from Garrett's race spreadsheet. Thanks Garrett!</p>
 </footer>
+
+
+<script>
+  const toggleButton = document.querySelector('.roster-toggle');
+  const rosterList = document.getElementById('roster-list');
+
+  toggleButton.addEventListener('click', () => {
+    const isHidden = rosterList.hasAttribute('hidden');
+
+    if (isHidden) {
+      rosterList.removeAttribute('hidden');
+      toggleButton.setAttribute('aria-expanded', 'true');
+    } else {
+      rosterList.setAttribute('hidden', '');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+</body>
