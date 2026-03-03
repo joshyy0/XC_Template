@@ -688,6 +688,23 @@
   </ul>
 </section>
 
+<script>
+  const toggleButton = document.querySelector('.roster-toggle');
+  const rosterList = document.getElementById('roster-list');
+
+  toggleButton.addEventListener('click', () => {
+    const isHidden = rosterList.hasAttribute('hidden');
+
+    if (isHidden) {
+      rosterList.removeAttribute('hidden');
+      toggleButton.setAttribute('aria-expanded', 'true');
+    } else {
+      rosterList.setAttribute('hidden', '');
+      toggleButton.setAttribute('aria-expanded', 'false');
+    }
+  });
+</script>
+
 <footer>
     <p>All data gathered from Garrett's race spreadsheet. Thanks Garrett!</p>
 </footer>
