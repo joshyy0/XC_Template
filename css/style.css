@@ -1,5 +1,6 @@
 * {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
 }
 
 a, button {
@@ -16,7 +17,7 @@ header {
   grid-template-rows: auto auto;
   gap: 1rem;
   align-items: center;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 0rem 1rem;
 }
 
 .header-content img {
@@ -46,6 +47,10 @@ header {
   grid-row: 2;
   text-align: center;
   padding: 0.5rem 0 0 0;
+
+  margin-bottom: 0px;
+  margin-top: 0px;
+
 }
 
 /* Articles */
@@ -189,4 +194,96 @@ footer {
     padding: 1rem 1.5rem;
     background-color: lightgray;
     text-align: center;
+}
+
+
+/* STYLING FOR RACE PAGES  */
+
+main p {
+  max-width: 60rem;
+  margin: 0 auto;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+  line-height: 1.6;
+}
+
+/* Table container spacing */
+table {
+  width: 90%;
+  max-width: 70rem;
+  margin: 2rem auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+}
+
+/* Caption styling */
+caption {
+  caption-side: top;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 1.25rem;
+  background-color: #c4e6fa;
+}
+
+/* Table header */
+thead {
+  background-color: rgb(146, 221, 248);
+}
+
+th {
+  padding: 0.75rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Table body cells */
+td {
+  padding: 0.75rem;
+  border-top: 0.05rem solid #e0e0e0;
+}
+
+/* Every other striped */
+tbody tr:nth-child(even) {
+  background-color: #f4fbff;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: #c4e6fa;
+  transition: background-color 0.2s ease;
+}
+
+/* Name links inside table */
+td a {
+  text-decoration: none;
+  font-weight: 600;
+  color: inherit;
+}
+
+td a:hover {
+  color: rgb(50, 155, 193);
+}
+
+
+/* ATHLETE PAGES */
+
+main img {
+  display: block;
+  max-width: 16rem;
+  width: 100%;
+  margin: 2rem auto 0 auto;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+main img:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
 }
