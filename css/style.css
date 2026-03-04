@@ -3,13 +3,41 @@
     margin: 0;
 }
 
+:root {
+  --bg-main: rgb(146, 221, 248);
+  --bg-card: white;
+  --bg-soft: #f4fbff;
+  --bg-accent: #c4e6fa;
+  --bg-accent-strong: rgb(50, 155, 193);
+
+  --text-main: #111;
+  --text-muted: #444;
+
+  --shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
+  --shadow-strong: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.12);
+}
+
+.dark-mode {
+  --bg-main: #1e1f24;
+  --bg-card: #2a2c33;
+  --bg-soft: #343741;
+  --bg-accent: #3e4451;
+  --bg-accent-strong: #5aa9c9;
+
+  --text-main: #f1f1f1;
+  --text-muted: #cfcfcf;
+
+  --shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.4);
+  --shadow-strong: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.6);
+}
+
 a, button {
     transition: all 0.2s ease;
 }
 
 /* Header */
 header {
-    background-color: rgb(146, 221, 248);
+    background-color: var(--bg-main);
 }
 .header-content {
   display: grid;
@@ -33,6 +61,7 @@ header {
   border: none;
   display: contents;
   background: transparent;
+  color: var(--text-main);
 }
 
 .header-text h1 {
@@ -57,13 +86,14 @@ header {
 main {
     text-align: center;
     padding: 1.5rem 1rem;
-    background-color: rgb(146, 221, 248);
+    background-color: var(--bg-main);
+    color: var(--text-main);
 }
 
 article {
     border: 0.1rem solid gray;
     margin: 1.5rem 1rem;
-    background-color: white;
+    background-color: var(--bg-card);
     box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
     border-radius: 1rem;
     padding: 5%;
@@ -90,7 +120,7 @@ article dt {
 article dt a {
   display: block;
   padding: 0.6em 1em;
-  background-color: #c4e6fa;
+  background-color: var(--bg-accent);
   border-radius: 0.75rem;
   text-decoration: none;
   color: inherit;
@@ -102,13 +132,13 @@ article dt a {
 article dd {
   margin: 0.25rem 0 0.75rem 0;
   font-weight: 500;
-  color: #444;
+  color: var(--text-muted);
 }
 
 /* Hover / Tap effect */
 article dt a:hover,
 article dt a:focus {
-  background-color: rgb(50, 155, 193);
+  background-color: var(--bg-accent-strong);
 }
 
 article dt a:active {
@@ -130,7 +160,7 @@ article p a {
 /* Hover / Tap effect */
 article p a:hover,
 article p a:focus {
-  background-color: rgb(50, 155, 193);
+  background-color: var(--bg-accent-strong);
 }
 
 article p a:active {
@@ -202,7 +232,7 @@ footer {
 main p {
   max-width: 60rem;
   margin: 0 auto;
-  background-color: white;
+  background-color: var(--bg-card);
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
@@ -215,7 +245,7 @@ table {
   max-width: 70rem;
   margin: 2rem auto;
   border-collapse: collapse;
-  background-color: white;
+  background-color: var(--bg-card);
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
@@ -227,12 +257,12 @@ caption {
   padding: 1rem;
   font-weight: 600;
   font-size: 1.25rem;
-  background-color: #c4e6fa;
+  background-color: var(--bg-accent);
 }
 
 /* Table header */
 thead {
-  background-color: rgb(146, 221, 248);
+  background-color: var(--bg-main);
 }
 
 th {
@@ -254,7 +284,7 @@ tbody tr:nth-child(even) {
 
 /* Hover effect */
 tbody tr:hover {
-  background-color: #c4e6fa;
+  background-color: var(--bg-accent);
   transition: background-color 0.2s ease;
 }
 
@@ -266,7 +296,7 @@ td a {
 }
 
 td a:hover {
-  color: rgb(50, 155, 193);
+  color: var(--bg-accent-strong);
 }
 
 
@@ -286,4 +316,25 @@ main img {
 main img:hover {
   transform: translateY(-0.25rem);
   box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode Styling */
+
+#theme-toggle {
+  grid-column:  1 / -1;
+  grid-row: 3;
+  margin: auto;
+
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+
+  background-color: var(--bg-accent);
+  color: var(--text-main);
+}
+
+#theme-toggle:hover {
+  background-color: var(--bg-accent-strong);
 }
