@@ -31,6 +31,20 @@
   --shadow-strong: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.6);
 }
 
+.high-contrast {
+  --bg-main: #000000;
+  --bg-card: #000000;
+  --bg-soft: #000000;
+  --bg-accent: #000000;
+  --bg-accent-strong: #ffff00;
+
+  --text-main: #ffffff;
+  --text-muted: #ffffff;
+
+  --shadow: none;
+  --shadow-strong: none;
+}
+
 a, button {
     transition: all 0.2s ease;
 }
@@ -148,7 +162,7 @@ article dt a:active {
 article p a {
   display: block;
   padding: 0.6em 1em;
-  background-color: #5aa9c9;
+  background-color: var(--bg-accent-strong);
   border-radius: 0.75rem;
   text-decoration: none;
   color: black;
@@ -321,7 +335,7 @@ main img:hover {
 /* Dark Mode Styling */
 
 #theme-toggle {
-  grid-column:  1 / -1;
+  grid-column:  1;
   grid-row: 3;
   margin: auto;
 
@@ -336,5 +350,62 @@ main img:hover {
 }
 
 #theme-toggle:hover {
+  background-color: var(--bg-accent-strong);
+}
+
+/* High contrast mode */
+
+/* Strong borders for clarity */
+.high-contrast article,
+.high-contrast table,
+.high-contrast main p {
+  border: 0.2rem solid #ffffff;
+}
+
+/* Make links extremely visible */
+.high-contrast a {
+  color: #ffff00;
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+.high-contrast p a{
+  color:#000000;
+}
+
+/* Buttons in high contrast */
+.high-contrast button {
+  background-color: #000000;
+  color: #ffffff;
+  border: 0.2rem solid #ffffff;
+}
+
+/* Hover state */
+.high-contrast button:hover,
+.high-contrast a:hover {
+  background-color: #ffff00;
+  color: #000000;
+}
+
+.high-contrast p a:hover{
+  color: gray;
+}
+
+#contrast-toggle {
+  grid-column: 2;
+  grid-row: 3;
+  margin: auto;
+
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+
+  background-color: var(--bg-accent);
+  color: var(--text-main);
+}
+
+#contrast-toggle:hover {
   background-color: var(--bg-accent-strong);
 }
