@@ -28,7 +28,7 @@
 }
 
 
-/* 2. LIGHT MODE OVERRIDE Triggered by prefers-color-scheme: light. */
+/* 2. light mode: Triggered by prefers-color-scheme: light. */
 @media (prefers-color-scheme: light) {
   :root {
     --color-bg:        #eef2fa;
@@ -51,7 +51,7 @@
 }
 
 
-/* 3. RESET & BASE Mobile-first: base styles target small screens.
+/* 3. Mobile-first: base styles target small screens.
       Body is locked to 390px to always render as mobile.*/
 *, *::before, *::after {
   box-sizing: border-box;
@@ -71,7 +71,7 @@ body {
   color: var(--color-text);
   line-height: 1.6;
 
-  /* Lock to mobile width */
+  /* lock to mobile width */
   max-width: 390px;
   margin: 0 auto;
   min-height: 100vh;
@@ -102,10 +102,7 @@ a:focus-visible {
 }
 
 
-/* ============================================================
-   4. ACCESSIBILITY — SKIP LINK
-      Visually hidden until focused by keyboard users.
-============================================================ */
+/* 4. links visually hidden until focused by keyboard users. */
 .skip-link {
   position: absolute;
   top: -50px;
@@ -124,15 +121,12 @@ a:focus-visible {
 }
 
 
-/* ============================================================
-   5. ANIMATIONS & @keyframes
-      fadeSlideUp  — cards and header entrance
-      barGrow      — performance progress bars grow in
-      shimmer      — subtle shimmer on perf bar
-      fadeIn       — roster list appears
-============================================================ */
+/* 5. animations & @keyframes
+      fadeSlideUp - cards and header entrance
+      barGrow - performance progress bars grow in
+      shimmer - subtle shimmer on perf bar
+      fadeIn - roster list appears */
 
-/* Cards + header slide up on load */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -144,26 +138,26 @@ a:focus-visible {
   }
 }
 
-/* Progress bars grow from 0 to their inline width */
+/* progress bars grow from 0 to their inline width */
 @keyframes barGrow {
   from { width: 0; }
   to   { width: 100%; }
 }
 
-/* Gentle shimmer sweep across the perf bar */
+/* gentle shimmer sweep across the perf bar */
 @keyframes shimmer {
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
 }
 
-/* Roster list fades in when expanded */
+/* roster list fades in when expanded */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
 
-/* 6. PREFERS-REDUCED-MOTION */
+/* 6. prefers-reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration:        0.01ms !important;
@@ -568,7 +562,7 @@ article h3 {
 }
 
 
-/* 15. FOOTER */
+/* 15. footer */
 footer {
   background: var(--color-surface2);
   border-top: 1px solid var(--color-border);
