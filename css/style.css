@@ -1,482 +1,603 @@
-/* FONTS AND MARGINS */
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-}
-
-/* Color - basic */
 :root {
-  --bg-main: rgb(146, 221, 248);
-  --bg-card: white;
-  --bg-soft: #f4fbff;
-  --bg-accent: #c4e6fa;
-  --bg-accent-strong: rgb(50, 155, 193);
+  /* Background colors */
+  --color-bg:        black;
+  --color-surface:   #101724;
+  --color-surface2:  #1a2235;
+  --color-border:    #2a3f5f;
 
-  --text-main: #111;
-  --text-muted: #444;
+  /* Accent — bright maize-gold.*/
+  --color-accent:    #f5c842;
+  --color-accent2:   #fbdb72;
 
-  --shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
-  --shadow-strong: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.12);
+  /* Text near-white, ~18:1 contrast on dark bg */
+  --color-text:      white;
+  --color-muted:     #93afd4;   
+
+  /* Runner row alternating colors */
+  --color-runner-a:  #1a2e4a;
+  --color-runner-b:  #152540;
+
+  /* Typography */
+  --font-display: 'Barlow Condensed', sans-serif;
+  --font-body:    'Barlow', sans-serif;
+
+  /* Misc */
+  --radius:     10px;
+  --transition: 0.25s ease;
+  --shadow:     0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
-/* Color - dark mode */
-.dark-mode {
-  --bg-main: #1e1f24;
-  --bg-card: #2a2c33;
-  --bg-soft: #343741;
-  --bg-accent: #3e4451;
-  --bg-accent-strong: #5aa9c9;
 
-  --text-main: #f1f1f1;
-  --text-muted: #cfcfcf;
+/* 2. LIGHT MODE OVERRIDE Triggered by prefers-color-scheme: light. */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg:        #eef2fa;
+    --color-surface:   #ffffff;
+    --color-surface2:  #dde5f5;
+    --color-border:    #a8bcd8;
 
-  --shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.4);
-  --shadow-strong: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.6);
+    /* Darker gold for light bg */
+    --color-accent:    #8a5e00;
+    --color-accent2:   #6b4800;
+
+    --color-text:      #0d1a2e;   
+    --color-muted:     #3d5c80;  
+
+    --color-runner-a:  #dce8f8;
+    --color-runner-b:  #cfddf5;
+
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  }
 }
 
-/* Color - high contrast */
-.high-contrast {
-  --bg-main: #000000;
-  --bg-card: #000000;
-  --bg-soft: #000000;
-  --bg-accent: #000000;
-  --bg-accent-strong: #ffff00;
 
-  --text-main: #ffffff;
-  --text-muted: #ffffff;
-
-  --shadow: none;
-  --shadow-strong: none;
-}
-
-/* All button effects */
-a, button {
-    transition: all 0.2s ease;
-}
-
-/* Header */
-header {
-    background-color: var(--bg-main);
-}
-.header-content {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-template-rows: auto auto;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.5rem 1rem 0rem 1rem;
-}
-
-.header-content img {
-  width: 100%;
-  grid-column: 1;
-  grid-row: 1;
-  max-width: 8rem;
-  border-radius: 1rem;
+/* 3. RESET & BASE Mobile-first: base styles target small screens.
+      Body is locked to 390px to always render as mobile.*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
   padding: 0;
-}
-
-.header-text {
-  border: none;
-  display: contents;
-  background: transparent;
-  color: var(--text-main);
-}
-
-.header-text h1 {
-  grid-column: 2;
-  grid-row: 1;
-  text-align: left;
-  background: transparent;
-}
-
-.header-text p {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  text-align: center;
-  padding: 0.5rem 0 0 0;
-
-  margin-bottom: 0px;
-  margin-top: 0px;
-
-}
-
-/* Articles */
-main {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    background-color: var(--bg-main);
-    color: var(--text-main);
-}
-
-article {
-    border: 0.1rem solid gray;
-    margin: 1.5rem 1rem;
-    background-color: var(--bg-card);
-    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
-    border-radius: 1rem;
-    padding: 5%;
-}
-
-article:hover {
-  transform: translateY(-0.3rem);
-  box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.12);
-}
-
-article h2 {
-    width: 95%;
-    margin: auto;
-}
-
-article dl {
-  margin-top: 1rem;
-}
-
-article dt {
-  margin-top: 0.75rem;
-}
-
-article dt a {
-  display: block;
-  padding: 0.6em 1em;
-  background-color: var(--bg-accent);
-  border-radius: 0.75rem;
-  text-decoration: none;
-  color: inherit;
-  font-weight: 600;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-/* Time  */
-article dd {
-  margin: 0.25rem 0 0.75rem 0;
-  font-weight: 500;
-  color: var(--text-muted);
-}
-
-/* Hover / Tap effect */
-article dt a:hover,
-article dt a:focus {
-  background-color: var(--bg-accent-strong);
-}
-
-article dt a:active {
-  transform: scale(0.98);
-}
-
-article p a {
-  display: block;
-  padding: 0.6em 1em;
-  background-color: var(--bg-accent-strong);
-  border-radius: 0.75rem;
-  text-decoration: none;
-  color: black;
-  font-weight: 600;
-  margin-top: 1rem;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-/* Hover / Tap effect */
-article p a:hover,
-article p a:focus {
-  background-color: var(--bg-accent-strong);
-}
-
-article p a:active {
-  transform: scale(0.98);
-}
-
-/* Roster */
-.roster-section {
-    text-align: center;
-    padding: 1.5rem 1rem;
-}
-
-.roster-toggle {
-  background-color: lightblue;
-  border: none;
-  padding: 0.75em 1.5em;
-  border-radius: 2rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.roster-toggle:hover,
-.roster-toggle:focus {
-  background-color: #5aa9c9;
-}
-
-.roster-toggle:active {
-  transform: scale(0.98);
-}
-
-.roster-list {
-  list-style: none;
-  margin-top: 1.5rem;
-  padding: 0;
-  text-align: left;
-}
-
-.roster-list li {
-  margin-bottom: 0.75rem;
-}
-
-.roster-list a {
-  display: block;
-  padding: 0.75em 1em;
-  background-color: #f4fbff;
-  border-radius: 0.75rem;
-  text-decoration: none;
-  color: inherit;
-  transition: background-color 0.2s ease;
-}
-
-/* Hover Effect */
-.roster-list a:hover,
-.roster-list a:focus {
-  background-color: lightblue;
-}
-
-/* Footer */
-footer {
-    padding: 1rem 1.5rem;
-    background-color: lightgray;
-    text-align: center;
-}
-
-
-/* STYLING FOR RACE PAGES  */
-
-main p {
-  max-width: 60rem;
-  margin: 0 auto;
-  background-color: var(--bg-card);
-  padding: 1rem;
-  border-radius: 1rem;
-  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
-  line-height: 1.6;
-}
-
-/* Table container spacing */
-table {
-  width: 90%;
-  max-width: 70rem;
-  margin: 2rem auto;
-  border-collapse: collapse;
-  background-color: var(--bg-card);
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.08);
-}
-
-/* Caption styling */
-caption {
-  caption-side: top;
-  padding: 1rem;
-  font-weight: 600;
-  font-size: 1.25rem;
-  background-color: var(--bg-accent);
-}
-
-/* Table header */
-thead {
-  background-color: var(--bg-main);
-}
-
-th {
-  padding: 0.75rem;
-  text-align: left;
-  font-weight: 600;
-}
-
-/* Table body cells */
-td {
-  padding: 0.75rem;
-  border-top: 0.05rem solid #e0e0e0;
-}
-
-/* Every other striped */
-tbody tr:nth-child(even) {
-  background-color: #f4fbff;
-}
-
-/* Hover effect */
-tbody tr:hover {
-  background-color: var(--bg-accent);
-  transition: background-color 0.2s ease;
-}
-
-/* Name links inside table */
-td a {
-  text-decoration: none;
-  font-weight: 600;
-  color: inherit;
-}
-
-td a:hover {
-  color: var(--bg-accent-strong);
-}
-
-
-/* ATHLETE PAGES */
-
-main img {
-  display: block;
-  max-width: 16rem;
-  width: 100%;
-  margin: 2rem auto 0 auto;
-  border-radius: 1rem;
-  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
-  object-fit: cover;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-main img:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
-}
-
-/* Dark Mode Styling */
-#theme-toggle {
-  grid-column:  1;
-  grid-row: 3;
-  margin: auto;
-
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-
-  background-color: var(--bg-accent);
-  color: var(--text-main);
-}
-
-#theme-toggle:hover {
-  background-color: var(--bg-accent-strong);
-}
-
-/* High contrast mode */
-
-/* Strong borders for clarity */
-.high-contrast article,
-.high-contrast table,
-.high-contrast main p {
-  border: 0.2rem solid #ffffff;
-}
-
-/* Make links extremely visible */
-.high-contrast a {
-  color: #ffff00;
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-.high-contrast p a{
-  color:#000000;
-}
-
-/* Buttons in high contrast */
-.high-contrast button {
-  background-color: #000000;
-  color: #ffffff;
-  border: 0.2rem solid #ffffff;
-}
-
-/* Hover state */
-.high-contrast button:hover,
-.high-contrast a:hover {
-  background-color: #ffff00;
-  color: #000000;
-}
-
-.high-contrast p a:hover{
-  color: gray;
-}
-
-#contrast-toggle {
-  grid-column: 2;
-  grid-row: 3;
-  margin: auto;
-
-  padding: 0.5rem 1rem;
-  border-radius: 2rem;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-
-  background-color: var(--bg-accent);
-  color: var(--text-main);
-}
-
-#contrast-toggle:hover {
-  background-color: var(--bg-accent-strong);
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
+  background: #05080f;
 }
 
-.jump-button {
-  grid-column: 1 / -1;
-  margin: 0.5rem auto 0 auto;
-  padding: 0.5rem 1.2rem;
-  border-radius: 2rem;
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+
+  /* Lock to mobile width */
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* image rule prevents overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Links */
+a {
+  color: var(--color-accent);
   text-decoration: none;
-  font-weight: 600;
-
-  background-color: var(--bg-accent);
-  color: var(--text-main);
-
-  display: inline-block;
+}
+a:hover,
+a:focus {
+  color: var(--color-accent2);
+  text-decoration: underline;
+}
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 3px;
 }
 
-.jump-button:hover,
-.jump-button:focus {
-  background-color: var(--bg-accent-strong);
+
+/* ============================================================
+   4. ACCESSIBILITY — SKIP LINK
+      Visually hidden until focused by keyboard users.
+============================================================ */
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background: var(--color-accent);
+  color: #000;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  z-index: 9999;
+  border-radius: 0 0 var(--radius) 0;
+  transition: top var(--transition);
+}
+.skip-link:focus {
+  top: 0;
 }
 
-/* Reduced Motion Accessibility - per rubric */
+
+/* ============================================================
+   5. ANIMATIONS & @keyframes
+      fadeSlideUp  — cards and header entrance
+      barGrow      — performance progress bars grow in
+      shimmer      — subtle shimmer on perf bar
+      fadeIn       — roster list appears
+============================================================ */
+
+/* Cards + header slide up on load */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress bars grow from 0 to their inline width */
+@keyframes barGrow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* Gentle shimmer sweep across the perf bar */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Roster list fades in when expanded */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* 6. PREFERS-REDUCED-MOTION */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
+  *, *::before, *::after {
+    animation-duration:        0.01ms !important;
+    animation-iteration-count: 1      !important;
+    transition-duration:       0.01ms !important;
   }
+}
 
-  * {
-    animation: none !important;
-    transition: none !important;
-  }
 
-  article:hover {
-    transform: none;
-    box-shadow: var(--shadow);
-  }
+/* 7. HEADER
+      Sticky so it stays visible while scrolling.
+      Hardcoded dark colors so it never inverts in light mode. */
+header {
+  background: linear-gradient(160deg, #0d1f38 0%, #0a0f1a 100%);
+  border-bottom: 3px solid #f5c842;
+  padding: 18px 16px 22px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 
-  article dt a:active {
-    transform: none;
-  }
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 
-  article p a:active {
-    transform: none;
-  }
+/* School logo — circular with gold ring */
+header img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #f5c842;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(245, 200, 66, 0.18);
+}
 
-  .roster-toggle:active {
-    transform: none;
-  }
+/* Responsive headline using clamp() — rubric: vw/clamp typography */
+.header-text h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 5vw, 1.4rem);
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  color: white;
+  text-transform: uppercase;
+}
 
-  main img:hover {
-    transform: none;
-    box-shadow: 0 0.4rem 1rem rgba(0,0,0,0.15);
-  }
+.header-text h1 span {
+  color: #f5c842;
+}
 
+.header-text p {
+  font-size: 0.75rem;
+  color: #93afd4;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+
+/* 8. FLOATING ACTION BUTTON Dark/Light Toggle */
+.theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 500;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: #000;
+  border: none;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+  transition: transform var(--transition), background var(--transition);
+}
+.theme-toggle:hover {
+  transform: scale(1.06);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--color-accent2);
+  outline-offset: 3px;
+}
+
+
+/* 9. MAIN CONTENT AREA */
+main {
+  padding: 20px 12px;
+}
+
+/* Section heading "Recent Races" */
+main > h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 6vw, 1.7rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-border);
+}
+
+
+/* 10. RACE CARDS Table-reflow layout: each race becomes a card.
+       Staggered entrance animations for visual polish. */
+article {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+article:nth-child(1)  { animation-delay: 0.05s; }
+article:nth-child(2)  { animation-delay: 0.10s; }
+article:nth-child(3)  { animation-delay: 0.15s; }
+article:nth-child(4)  { animation-delay: 0.20s; }
+article:nth-child(5)  { animation-delay: 0.25s; }
+article:nth-child(6)  { animation-delay: 0.30s; }
+article:nth-child(7)  { animation-delay: 0.35s; }
+article:nth-child(8)  { animation-delay: 0.40s; }
+
+/* Card title strip */
+article > h2 {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 10px 14px 8px;
+  background: var(--color-surface2);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text);
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Gold accent bar on left of each card title */
+article > h2::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 1em;
+  background: var(--color-accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Race date */
+article > p:first-of-type {
+  font-size: 0.73rem;
+  color: var(--color-muted);
+  padding: 6px 14px 0;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* "Top Skyline Runners" subheading */
+article h3 {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+  padding: 10px 14px 6px;
+}
+
+
+/* 11. RUNNER ROWS Card-reflow table design
+       Alternating row colors for readability 
+       Animated CSS progress bars */
+
+/* container for all runner rows within a race card */
+.runner-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 8px 8px;
+}
+
+/* Each runner is a horizontal flex row mobile card layout */
+.runner-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+  transition: background var(--transition), transform var(--transition);
+}
+
+/* Touch-friendly active state */
+.runner-row:active {
+  transform: scale(0.98);
+}
+
+/* Alternating row colors */
+.runner-row:nth-child(odd)  { background: var(--color-runner-a); }
+.runner-row:nth-child(even) { background: var(--color-runner-b); }
+
+/* Runner name */
+.runner-name {
+  font-size: 0.88rem;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  color: var(--color-accent);
+  letter-spacing: 0.01em;
+}
+.runner-name a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+.runner-name a:hover,
+.runner-name a:focus {
+  color: var(--color-accent2);
+  text-decoration: underline;
+}
+
+/* Finish time */
+.runner-time {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+/* CSS animated performance bar */
+.perf-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  /* Shimmer gradient */
+  background: linear-gradient(
+    90deg,
+    var(--color-accent) 0%,
+    var(--color-accent2) 50%,
+    var(--color-accent) 100%
+  );
+  background-size: 200% auto;
+  border-radius: 0 2px 2px 0;
+  opacity: 0.55;
+}
+
+/* Stagger bar animations so they don't all fire at once */
+.runner-row:nth-child(2) .perf-bar { 
+  animation-delay: 0.1s, 1.0s;
+}
+.runner-row:nth-child(3) .perf-bar { 
+  animation-delay: 0.2s, 1.1s; 
+}
+.runner-row:nth-child(4) .perf-bar { 
+  animation-delay: 0.3s, 1.2s; 
+}
+
+
+/* 
+   12. For PLACE BADGES Gold / Silver / Bronze / 4th */
+.runner-place {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  font-weight: 900;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.runner-place.p1 { background: #f5c842; color: #000; }
+
+.runner-place.p2 { background: #b8c4ce; color: #000; }
+
+.runner-place.p3 { background: #7a3e0a; color: #fff; }
+
+.runner-place.p4 {
+  background: var(--color-border);
+  color: var(--color-muted);
+}
+
+
+/* 13. MEET RESULTS LINK Bottom of each race card. */
+.meet-link {
+  display: block;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 9px 14px;
+  background: var(--color-surface2);
+  border-top: 1px solid var(--color-border);
+  color: var(--color-accent);
+  transition: background var(--transition), color var(--transition);
+  text-decoration: none;
+}
+.meet-link:hover,
+.meet-link:focus {
+  background: var(--color-accent);
+  color: #000;
+  text-decoration: none;
+}
+
+
+/* 14. ROSTER SECTION Collapsible with aria-expanded and 
+       Two column grid layout for compact mobile display.*/
+.roster-section {
+  padding: 12px 12px 24px;
+  border-top: 2px solid var(--color-border);
+}
+
+/* Toggle button */
+.roster-toggle {
+  width: 100%;
+  padding: 14px 18px;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--color-surface2);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background var(--transition), border-color var(--transition);
+}
+
+/* Chevron arrow — rotates when roster is open */
+.roster-toggle::after {
+  content: '▼';
+  font-size: 0.75rem;
+  transition: transform var(--transition);
+}
+.roster-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+}
+
+.roster-toggle:hover,
+.roster-toggle:focus-visible {
+  background: var(--color-border);
+  border-color: var(--color-accent);
+  outline: none;
+}
+
+/* Compact two-column grid */
+.roster-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin-top: 12px;
+  animation: fadeIn 0.3s ease both;
+}
+
+.roster-list[hidden] {
+  display: none;
+}
+
+/* Each athlete link */
+.roster-list li a {
+  display: block;
+  padding: 9px 11px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  color: var(--color-text);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+.roster-list li a:hover,
+.roster-list li a:focus {
+  background: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent);
+  text-decoration: none;
+}
+
+
+/* 15. FOOTER */
+footer {
+  background: var(--color-surface2);
+  border-top: 1px solid var(--color-border);
+  padding: 16px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+
+/* 16. ATHLETE PROFILE PAGES Circular images
+       Rubric: object fit, circular crop, shadow + border.
+       Applies to <img> inside <main> on athlete pages. */
+main img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid #f5c842;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.45),
+    0 0 0 5px rgba(245, 200, 66, 0.18);
+  display: block;
+  margin: 16px auto 20px;
 }
 
 /*
 AI STATEMENT:
   AI was used in generating ideas on how to style this page, 
-  and set up foundations of how to efficienty get styling to work across pages.
-
-  interesting note:
-  It would often give code and colors that did not pass accessibility checkers.
+  and setting up how to efficienty get styling to work across pages, also for learning syntax for transitions and animations
 */

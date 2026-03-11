@@ -234,7 +234,7 @@ for meet in sorted_keys:
         <h2>{meet}</h2>
         <p>{meet_date}</p>
         <h3>Top Skyline Runners</h3>
-        <dl>
+        <ul class="runner-list">
 """
     for r in skyline_runners[:4]:
         name = safe_get(r, "Name")
@@ -244,18 +244,18 @@ for meet in sorted_keys:
         if name and athlete_id:
             athlete_page_link = f"mens_team/{name}{athlete_id}.html"
             home_html += f"""
-            <dt><a href="{athlete_page_link}">{name}</a></dt><dd>{time}</dd>
+            <dt><a href="{athlete_page_link}">{name}</a></a><dd>{time}</span>
             """
         else:
             home_html += f"""
-            <dt>{name}</dt><dd>{time}</dd>
+            <dt>{name}</a><dd>{time}</span>
             """
         # print(name, time)
         #home_html += f"""
-            #<dt>{name}</dt><dd>{time}</dd>
+            #<dt>{name}</a><dd>{time}</span>
         #"""
     home_html += f"""
-        </dl>
+        </ul>
         
         <p><a href={race_html_file}>Meet Results</a></p>
     </article>
