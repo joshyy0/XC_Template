@@ -5,11 +5,11 @@
   --color-surface2:  #1a2235;
   --color-border:    #2a3f5f;
 
-  /* Accent — bright maize-gold.*/
+  /* Accent bright maize-gold.*/
   --color-accent:    #f5c842;
   --color-accent2:   #fbdb72;
 
-  /* Text near-white, ~18:1 contrast on dark bg */
+  /* Text near-white*/
   --color-text:      white;
   --color-muted:     #93afd4;   
 
