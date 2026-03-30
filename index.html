@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -30,311 +31,325 @@
   <main id="main-content">
     <h2>Recent Races</h2>
 
-    <!-- helper -->
+    <!-- Sort bar — JS component -->
+    <div class="sort-bar">
+      <label for="sort-select">Sort by</label>
+      <select id="sort-select" aria-label="Sort races">
+        <option value="default">Default Order</option>
+        <option value="date-asc">Date: Oldest First</option>
+        <option value="date-desc">Date: Newest First</option>
+        <option value="name-asc">Event Name: A to Z</option>
+        <option value="name-desc">Event Name: Z to A</option>
+      </select>
+    </div>
 
-    <article>
-      <h2>37th Early Bird Open — Men's 5K HS Open</h2>
-      <p>Thu Aug 29 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row">
-          <span class="runner-place p1" role="img" aria-label="1st">1</span>
-          <span class="runner-name"><a href="mens_team/Matthew%20Guikema23349678.html">Matthew Guikema</a></span>
-          <span class="runner-time">17:35</span>
-          <div class="perf-bar" style="width:95%" aria-hidden="true"></div>
+    <!-- Race grid wrapper — required for sort and responsive layout -->
+    <div class="race-grid">
+
+      <article>
+        <h2>37th Early Bird Open — Men's 5K HS Open</h2>
+        <p>Thu Aug 29 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row">
+            <span class="runner-place p1" role="img" aria-label="1st">1</span>
+            <span class="runner-name"><a href="mens_team/Matthew%20Guikema23349678.html">Matthew Guikema</a></span>
+            <span class="runner-time">17:35</span>
+            <div class="perf-bar" style="width:95%" aria-hidden="true"></div>
+          </div>
+          <div class="runner-row">
+            <span class="runner-place p2" role="img" aria-label="2nd">2</span>
+            <span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span>
+            <span class="runner-time">17:44</span>
+            <div class="perf-bar" style="width:88%" aria-hidden="true"></div>
+          </div>
+          <div class="runner-row">
+            <span class="runner-place p3" role="img" aria-label="3rd">3</span>
+            <span class="runner-name"><a href="mens_team/Zeke%20Lafferty21142917.html">Zeke Lafferty</a></span>
+            <span class="runner-time">18:07</span>
+            <div class="perf-bar" style="width:78%" aria-hidden="true"></div>
+          </div>
+          <div class="runner-row">
+            <span class="runner-place p4" role="img" aria-label="4th">4</span>
+            <span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span>
+            <span class="runner-time">18:23</span>
+            <div class="perf-bar" style="width:70%" aria-hidden="true"></div>
+          </div>
         </div>
-        <div class="runner-row">
-          <span class="runner-place p2" role="img" aria-label="2nd">2</span>
-          <span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span>
-          <span class="runner-time">17:44</span>
-          <div class="perf-bar" style="width:88%" aria-hidden="true"></div>
+        <a class="meet-link" href="meets/37th_Early_Bird_Open_Mens_5000_Meters_HS_Open_5K_24_race_page.html">View Full Meet Results →</a>
+      </article>
+
+      <article>
+        <h2>37th Early Bird Open — Women's 5K HS Open</h2>
+        <p>Thu Aug 29 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row">
+            <span class="runner-place p1" role="img" aria-label="1st">1</span>
+            <span class="runner-name"><a href="womens_team/Lucia%20Llanes26328690.html">Lucia Llanes</a></span>
+            <span class="runner-time">20:02</span>
+            <div class="perf-bar" style="width:95%" aria-hidden="true"></div>
+          </div>
+          <div class="runner-row">
+            <span class="runner-place p2" role="img" aria-label="2nd">2</span>
+            <span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span>
+            <span class="runner-time">21:03</span>
+            <div class="perf-bar" style="width:82%" aria-hidden="true"></div>
+          </div>
+          <div class="runner-row">
+            <span class="runner-place p3" role="img" aria-label="3rd">3</span>
+            <span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span>
+            <span class="runner-time">21:16</span>
+            <div class="perf-bar" style="width:76%" aria-hidden="true"></div>
+          </div>
+          <div class="runner-row">
+            <span class="runner-place p4" role="img" aria-label="4th">4</span>
+            <span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span>
+            <span class="runner-time">21:22</span>
+            <div class="perf-bar" style="width:72%" aria-hidden="true"></div>
+          </div>
         </div>
-        <div class="runner-row">
-          <span class="runner-place p3" role="img" aria-label="3rd">3</span>
-          <span class="runner-name"><a href="mens_team/Zeke%20Lafferty21142917.html">Zeke Lafferty</a></span>
-          <span class="runner-time">18:07</span>
-          <div class="perf-bar" style="width:78%" aria-hidden="true"></div>
+        <a class="meet-link" href="meets/37th_Early_Bird_Open_Womens_5000_Meters_HS_Open_5K_24_race_page.html">View Full Meet Results →</a>
+      </article>
+
+      <article>
+        <h2>Bret Clements Bath Inv. — Men's 5K J.V.</h2>
+        <p>Sat Sep 7 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Enshu%20Kuan23687884.html">Enshu Kuan</a></span><span class="runner-time">18:13</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Dylan%20Hanley23349680.html">Dylan Hanley</a></span><span class="runner-time">18:25</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Raphael%20Fournier23564875.html">Raphael Fournier</a></span><span class="runner-time">18:46</span><div class="perf-bar" style="width:78%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Jackson%20Cichewicz26322046.html">Jackson Cichewicz</a></span><span class="runner-time">18:51</span><div class="perf-bar" style="width:74%" aria-hidden="true"></div></div>
         </div>
-        <div class="runner-row">
-          <span class="runner-place p4" role="img" aria-label="4th">4</span>
-          <span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span>
-          <span class="runner-time">18:23</span>
-          <div class="perf-bar" style="width:70%" aria-hidden="true"></div>
+        <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Mens_5000_Meters_J.V._24_race_page.html">View Full Meet Results →</a>
+      </article>
+
+      <article>
+        <h2>Bret Clements Bath Inv. — Women's 5K Class 1</h2>
+        <p>Sat Sep 7 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span><span class="runner-time">20:04</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">20:34</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span><span class="runner-time">20:55</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Becca%20Van%20Lent24262808.html">Becca Van Lent</a></span><span class="runner-time">21:38</span><div class="perf-bar" style="width:66%" aria-hidden="true"></div></div>
         </div>
-      </div>
-      <a class="meet-link" href="meets/37th_Early_Bird_Open_Mens_5000_Meters_HS_Open_5K_24_race_page.html">View Full Meet Results →</a>
-    </article>
+        <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Womens_5000_Meters_Class_1_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>37th Early Bird Open — Women's 5K HS Open</h2>
-      <p>Thu Aug 29 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row">
-          <span class="runner-place p1" role="img" aria-label="1st">1</span>
-          <span class="runner-name"><a href="womens_team/Lucia%20Llanes26328690.html">Lucia Llanes</a></span>
-          <span class="runner-time">20:02</span>
-          <div class="perf-bar" style="width:95%" aria-hidden="true"></div>
+      <article>
+        <h2>Bret Clements Bath Inv. — Men's 5K Class 1</h2>
+        <p>Sat Sep 7 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:07</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:13</span><div class="perf-bar" style="width:90%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span><span class="runner-time">17:14</span><div class="perf-bar" style="width:89%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Kyle%20Krasan21245954.html">Kyle Krasan</a></span><span class="runner-time">17:43</span><div class="perf-bar" style="width:75%" aria-hidden="true"></div></div>
         </div>
-        <div class="runner-row">
-          <span class="runner-place p2" role="img" aria-label="2nd">2</span>
-          <span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span>
-          <span class="runner-time">21:03</span>
-          <div class="perf-bar" style="width:82%" aria-hidden="true"></div>
+        <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Mens_5000_Meters_Class_1_24_race_page.html">View Full Meet Results →</a>
+      </article>
+
+      <article>
+        <h2>Bret Clements Bath Inv. — Women's 5K J.V.</h2>
+        <p>Sat Sep 7 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Katie%20Yuan23349724.html">Katie Yuan</a></span><span class="runner-time">22:39</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Grace%20Hopkins21142901.html">Grace Hopkins</a></span><span class="runner-time">23:01</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Julianna%20Heung23687880.html">Julianna Heung</a></span><span class="runner-time">24:06</span><div class="perf-bar" style="width:72%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Ruthie%20Scott23349715.html">Ruthie Scott</a></span><span class="runner-time">24:20</span><div class="perf-bar" style="width:68%" aria-hidden="true"></div></div>
         </div>
-        <div class="runner-row">
-          <span class="runner-place p3" role="img" aria-label="3rd">3</span>
-          <span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span>
-          <span class="runner-time">21:16</span>
-          <div class="perf-bar" style="width:76%" aria-hidden="true"></div>
+        <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Womens_5000_Meters_J.V._24_race_page.html">View Full Meet Results →</a>
+      </article>
+
+      <article>
+        <h2>SEC Jamboree #1 — Men's 5K Varsity</h2>
+        <p>Tue Sep 10 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:29</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:41</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Enshu%20Kuan23687884.html">Enshu Kuan</a></span><span class="runner-time">17:52</span><div class="perf-bar" style="width:81%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span><span class="runner-time">18:12</span><div class="perf-bar" style="width:72%" aria-hidden="true"></div></div>
         </div>
-        <div class="runner-row">
-          <span class="runner-place p4" role="img" aria-label="4th">4</span>
-          <span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span>
-          <span class="runner-time">21:22</span>
-          <div class="perf-bar" style="width:72%" aria-hidden="true"></div>
+        <a class="meet-link" href="meets/SEC_Jamboree_1_Mens_5000_Meters_Varsity_24_race_page.html">View Full Meet Results →</a>
+      </article>
+
+      <article>
+        <h2>SEC Jamboree #1 — Men's 5K Junior Varsity</h2>
+        <p>Tue Sep 10 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Santiago%20Valenzuela23821078.html">Santiago Valenzuela</a></span><span class="runner-time">18:55</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Henry%20Strait22288700.html">Henry Strait</a></span><span class="runner-time">18:56</span><div class="perf-bar" style="width:94%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Jackson%20Cichewicz26322046.html">Jackson Cichewicz</a></span><span class="runner-time">19:11</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Dylan%20Hanley23349680.html">Dylan Hanley</a></span><span class="runner-time">19:13</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
         </div>
-      </div>
-      <a class="meet-link" href="meets/37th_Early_Bird_Open_Womens_5000_Meters_HS_Open_5K_24_race_page.html">View Full Meet Results →</a>
-    </article>
+        <a class="meet-link" href="meets/SEC_Jamboree_1_Mens_5000_Meters_Junior_Varsity_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>Bret Clements Bath Inv. — Men's 5K J.V.</h2>
-      <p>Sat Sep 7 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Enshu%20Kuan23687884.html">Enshu Kuan</a></span><span class="runner-time">18:13</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Dylan%20Hanley23349680.html">Dylan Hanley</a></span><span class="runner-time">18:25</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Raphael%20Fournier23564875.html">Raphael Fournier</a></span><span class="runner-time">18:46</span><div class="perf-bar" style="width:78%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Jackson%20Cichewicz26322046.html">Jackson Cichewicz</a></span><span class="runner-time">18:51</span><div class="perf-bar" style="width:74%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Mens_5000_Meters_J.V._24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>SEC Jamboree #1 — Women's 5K Varsity</h2>
+        <p>Tue Sep 10 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Lucia%20Llanes26328690.html">Lucia Llanes</a></span><span class="runner-time">19:05</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span><span class="runner-time">20:25</span><div class="perf-bar" style="width:75%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Mara%20Mocanu23687883.html">Mara Mocanu</a></span><span class="runner-time">22:31</span><div class="perf-bar" style="width:55%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">23:32</span><div class="perf-bar" style="width:46%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/SEC_Jamboree_1_Womens_5000_Meters_Varsity_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>Bret Clements Bath Inv. — Women's 5K Class 1</h2>
-      <p>Sat Sep 7 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span><span class="runner-time">20:04</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">20:34</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span><span class="runner-time">20:55</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Becca%20Van%20Lent24262808.html">Becca Van Lent</a></span><span class="runner-time">21:38</span><div class="perf-bar" style="width:66%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Womens_5000_Meters_Class_1_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>SEC Jamboree #1 — Women's 5K Junior Varsity</h2>
+        <p>Tue Sep 10 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">23:43</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Violet%20Olley26328683.html">Violet Olley</a></span><span class="runner-time">24:37</span><div class="perf-bar" style="width:80%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Adrienne%20Stewart21142907.html">Adrienne Stewart</a></span><span class="runner-time">24:40</span><div class="perf-bar" style="width:79%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Julianna%20Heung23687880.html">Julianna Heung</a></span><span class="runner-time">25:21</span><div class="perf-bar" style="width:68%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/SEC_Jamboree_1_Womens_5000_Meters_Junior_Varsity_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>Bret Clements Bath Inv. — Men's 5K Class 1</h2>
-      <p>Sat Sep 7 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:07</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:13</span><div class="perf-bar" style="width:90%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span><span class="runner-time">17:14</span><div class="perf-bar" style="width:89%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Kyle%20Krasan21245954.html">Kyle Krasan</a></span><span class="runner-time">17:43</span><div class="perf-bar" style="width:75%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Mens_5000_Meters_Class_1_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>56th Holly Festival — Women's 5K D1 Girls</h2>
+        <p>Sat Sep 14 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span><span class="runner-time">19:48</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span><span class="runner-time">21:47</span><div class="perf-bar" style="width:70%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">21:52</span><div class="perf-bar" style="width:68%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">22:09</span><div class="perf-bar" style="width:64%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Womens_5000_Meters_D1_Girls_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>Bret Clements Bath Inv. — Women's 5K J.V.</h2>
-      <p>Sat Sep 7 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Katie%20Yuan23349724.html">Katie Yuan</a></span><span class="runner-time">22:39</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Grace%20Hopkins21142901.html">Grace Hopkins</a></span><span class="runner-time">23:01</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Julianna%20Heung23687880.html">Julianna Heung</a></span><span class="runner-time">24:06</span><div class="perf-bar" style="width:72%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Ruthie%20Scott23349715.html">Ruthie Scott</a></span><span class="runner-time">24:20</span><div class="perf-bar" style="width:68%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/Bret_Clements_Bath_Invitational_Womens_5000_Meters_J.V._24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>56th Holly Festival — Women's 5K D1 JV Girls</h2>
+        <p>Sat Sep 14 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Gwen%20Stotts-Walshe24802677.html">Gwen Stotts-Walshe</a></span><span class="runner-time">23:00</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Tia%20Cocciolone22520342.html">Tia Cocciolone</a></span><span class="runner-time">23:10</span><div class="perf-bar" style="width:91%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Elin%20Tenbrink23349718.html">Elin Tenbrink</a></span><span class="runner-time">23:19</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Adrienne%20Stewart21142907.html">Adrienne Stewart</a></span><span class="runner-time">23:31</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Womens_5000_Meters_D1_JV_Girls_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>SEC Jamboree #1 — Men's 5K Varsity</h2>
-      <p>Tue Sep 10 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:29</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:41</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Enshu%20Kuan23687884.html">Enshu Kuan</a></span><span class="runner-time">17:52</span><div class="perf-bar" style="width:81%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span><span class="runner-time">18:12</span><div class="perf-bar" style="width:72%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC_Jamboree_1_Mens_5000_Meters_Varsity_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>56th Holly Festival — Men's 5K D1 JV Boys</h2>
+        <p>Sat Sep 14 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Oskar%20MacArthur23349698.html">Oskar MacArthur</a></span><span class="runner-time">17:57</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Martin%20Gehrke19203161.html">Martin Gehrke</a></span><span class="runner-time">17:58</span><div class="perf-bar" style="width:94%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Dylan%20Hanley23349680.html">Dylan Hanley</a></span><span class="runner-time">18:13</span><div class="perf-bar" style="width:85%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Parker%20Razelun18820257.html">Parker Razelun</a></span><span class="runner-time">18:21</span><div class="perf-bar" style="width:81%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Mens_5000_Meters_D1_JV_Boys_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>SEC Jamboree #1 — Men's 5K Junior Varsity</h2>
-      <p>Tue Sep 10 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Santiago%20Valenzuela23821078.html">Santiago Valenzuela</a></span><span class="runner-time">18:55</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Henry%20Strait22288700.html">Henry Strait</a></span><span class="runner-time">18:56</span><div class="perf-bar" style="width:94%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Jackson%20Cichewicz26322046.html">Jackson Cichewicz</a></span><span class="runner-time">19:11</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Dylan%20Hanley23349680.html">Dylan Hanley</a></span><span class="runner-time">19:13</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC_Jamboree_1_Mens_5000_Meters_Junior_Varsity_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>56th Holly Festival — Men's 5K D1 Boys</h2>
+        <p>Sat Sep 14 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:31</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span><span class="runner-time">17:43</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Enshu%20Kuan23687884.html">Enshu Kuan</a></span><span class="runner-time">17:44</span><div class="perf-bar" style="width:86%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:57</span><div class="perf-bar" style="width:79%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Mens_5000_Meters_D1_Boys_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>SEC Jamboree #1 — Women's 5K Varsity</h2>
-      <p>Tue Sep 10 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Lucia%20Llanes26328690.html">Lucia Llanes</a></span><span class="runner-time">19:05</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span><span class="runner-time">20:25</span><div class="perf-bar" style="width:75%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Mara%20Mocanu23687883.html">Mara Mocanu</a></span><span class="runner-time">22:31</span><div class="perf-bar" style="width:55%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">23:32</span><div class="perf-bar" style="width:46%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC_Jamboree_1_Womens_5000_Meters_Varsity_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>Jackson Inv. — Women's 5K Orange Division</h2>
+        <p>Sat Sep 21 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Becca%20Van%20Lent24262808.html">Becca Van Lent</a></span><span class="runner-time">19:57</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">20:12</span><div class="perf-bar" style="width:88%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span><span class="runner-time">20:46</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">21:38</span><div class="perf-bar" style="width:61%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/Jackson_Invitational_Womens_5000_Meters_Orange_Division_(1000_+_enrolment)_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>SEC Jamboree #1 — Women's 5K Junior Varsity</h2>
-      <p>Tue Sep 10 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">23:43</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Violet%20Olley26328683.html">Violet Olley</a></span><span class="runner-time">24:37</span><div class="perf-bar" style="width:80%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Adrienne%20Stewart21142907.html">Adrienne Stewart</a></span><span class="runner-time">24:40</span><div class="perf-bar" style="width:79%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Julianna%20Heung23687880.html">Julianna Heung</a></span><span class="runner-time">25:21</span><div class="perf-bar" style="width:68%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC_Jamboree_1_Womens_5000_Meters_Junior_Varsity_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>Jackson Inv. — Men's 5K Orange Division</h2>
+        <p>Sat Sep 21 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">16:41</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Kyle%20Krasan21245954.html">Kyle Krasan</a></span><span class="runner-time">16:55</span><div class="perf-bar" style="width:85%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Matthew%20Guikema23349678.html">Matthew Guikema</a></span><span class="runner-time">17:01</span><div class="perf-bar" style="width:81%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Oskar%20MacArthur23349698.html">Oskar MacArthur</a></span><span class="runner-time">17:11</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/Jackson_Invitational_Mens_5000_Meters_Orange_Division_(1000_+_enrolment)_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>56th Holly Festival — Women's 5K D1 Girls</h2>
-      <p>Sat Sep 14 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Irie%20Scrase23564884.html">Irie Scrase</a></span><span class="runner-time">19:48</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span><span class="runner-time">21:47</span><div class="perf-bar" style="width:70%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">21:52</span><div class="perf-bar" style="width:68%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">22:09</span><div class="perf-bar" style="width:64%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Womens_5000_Meters_D1_Girls_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>SEC Jamboree #2 — Women's Reserve Girls</h2>
+        <p>Tue Sep 24 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Gwen%20Stotts-Walshe24802677.html">Gwen Stotts-Walshe</a></span><span class="runner-time">22:20</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Violet%20Olley26328683.html">Violet Olley</a></span><span class="runner-time">23:07</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Adrienne%20Stewart21142907.html">Adrienne Stewart</a></span><span class="runner-time">23:07</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Pia%20Odell26328678.html">Pia Odell</a></span><span class="runner-time">24:09</span><div class="perf-bar" style="width:66%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Womens_5000_Meters_Reserve_Girls_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>56th Holly Festival — Women's 5K D1 JV Girls</h2>
-      <p>Sat Sep 14 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Gwen%20Stotts-Walshe24802677.html">Gwen Stotts-Walshe</a></span><span class="runner-time">23:00</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Tia%20Cocciolone22520342.html">Tia Cocciolone</a></span><span class="runner-time">23:10</span><div class="perf-bar" style="width:91%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Elin%20Tenbrink23349718.html">Elin Tenbrink</a></span><span class="runner-time">23:19</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Adrienne%20Stewart21142907.html">Adrienne Stewart</a></span><span class="runner-time">23:31</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Womens_5000_Meters_D1_JV_Girls_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>SEC Jamboree #2 — Men's Reserve Boys</h2>
+        <p>Tue Sep 24 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Gustaf%20Finn21147171.html">Gustaf Finn</a></span><span class="runner-time">18:31</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Henry%20Strait22288700.html">Henry Strait</a></span><span class="runner-time">18:50</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Santiago%20Valenzuela23821078.html">Santiago Valenzuela</a></span><span class="runner-time">18:50</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Paxton%20Rose23349712.html">Paxton Rose</a></span><span class="runner-time">18:59</span><div class="perf-bar" style="width:79%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Mens_5000_Meters_Reserve_Boys_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>56th Holly Festival — Men's 5K D1 JV Boys</h2>
-      <p>Sat Sep 14 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Oskar%20MacArthur23349698.html">Oskar MacArthur</a></span><span class="runner-time">17:57</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Martin%20Gehrke19203161.html">Martin Gehrke</a></span><span class="runner-time">17:58</span><div class="perf-bar" style="width:94%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Dylan%20Hanley23349680.html">Dylan Hanley</a></span><span class="runner-time">18:13</span><div class="perf-bar" style="width:85%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Parker%20Razelun18820257.html">Parker Razelun</a></span><span class="runner-time">18:21</span><div class="perf-bar" style="width:81%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Mens_5000_Meters_D1_JV_Boys_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>SEC Jamboree #2 — Men's Varsity Boys</h2>
+        <p>Tue Sep 24 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:20</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:32</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Matthew%20Guikema23349678.html">Matthew Guikema</a></span><span class="runner-time">17:39</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Oskar%20MacArthur23349698.html">Oskar MacArthur</a></span><span class="runner-time">17:39</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Mens_5000_Meters_Varsity_Boys_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>56th Holly Festival — Men's 5K D1 Boys</h2>
-      <p>Sat Sep 14 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:31</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Jack%20Robichaud18820279.html">Jack Robichaud</a></span><span class="runner-time">17:43</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Enshu%20Kuan23687884.html">Enshu Kuan</a></span><span class="runner-time">17:44</span><div class="perf-bar" style="width:86%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:57</span><div class="perf-bar" style="width:79%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/56th_Holly-Duane_Raffin_Festival_of_Races_Mens_5000_Meters_D1_Boys_24_race_page.html">View Full Meet Results →</a>
-    </article>
+      <article>
+        <h2>SEC Jamboree #2 — Women's Varsity Girls</h2>
+        <p>Tue Sep 24 2024</p>
+        <h3>Top Skyline Runners</h3>
+        <div class="runner-list">
+          <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Lucia%20Llanes26328690.html">Lucia Llanes</a></span><span class="runner-time">19:19</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">20:17</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Becca%20Van%20Lent24262808.html">Becca Van Lent</a></span><span class="runner-time">20:17</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
+          <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">22:09</span><div class="perf-bar" style="width:54%" aria-hidden="true"></div></div>
+        </div>
+        <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Womens_5000_Meters_Varsity_Girls_24_race_page.html">View Full Meet Results →</a>
+      </article>
 
-    <article>
-      <h2>Jackson Inv. — Women's 5K Orange Division</h2>
-      <p>Sat Sep 21 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Becca%20Van%20Lent24262808.html">Becca Van Lent</a></span><span class="runner-time">19:57</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">20:12</span><div class="perf-bar" style="width:88%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Lila%20Edison23349671.html">Lila Edison</a></span><span class="runner-time">20:46</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">21:38</span><div class="perf-bar" style="width:61%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/Jackson_Invitational_Womens_5000_Meters_Orange_Division_(1000_+_enrolment)_24_race_page.html">View Full Meet Results →</a>
-    </article>
-
-    <article>
-      <h2>Jackson Inv. — Men's 5K Orange Division</h2>
-      <p>Sat Sep 21 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">16:41</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Kyle%20Krasan21245954.html">Kyle Krasan</a></span><span class="runner-time">16:55</span><div class="perf-bar" style="width:85%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Matthew%20Guikema23349678.html">Matthew Guikema</a></span><span class="runner-time">17:01</span><div class="perf-bar" style="width:81%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Oskar%20MacArthur23349698.html">Oskar MacArthur</a></span><span class="runner-time">17:11</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/Jackson_Invitational_Mens_5000_Meters_Orange_Division_(1000_+_enrolment)_24_race_page.html">View Full Meet Results →</a>
-    </article>
-
-    <article>
-      <h2>SEC Jamboree #2 — Women's Reserve Girls</h2>
-      <p>Tue Sep 24 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Gwen%20Stotts-Walshe24802677.html">Gwen Stotts-Walshe</a></span><span class="runner-time">22:20</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Violet%20Olley26328683.html">Violet Olley</a></span><span class="runner-time">23:07</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Adrienne%20Stewart21142907.html">Adrienne Stewart</a></span><span class="runner-time">23:07</span><div class="perf-bar" style="width:82%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Pia%20Odell26328678.html">Pia Odell</a></span><span class="runner-time">24:09</span><div class="perf-bar" style="width:66%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Womens_5000_Meters_Reserve_Girls_24_race_page.html">View Full Meet Results →</a>
-    </article>
-
-    <article>
-      <h2>SEC Jamboree #2 — Men's Reserve Boys</h2>
-      <p>Tue Sep 24 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Gustaf%20Finn21147171.html">Gustaf Finn</a></span><span class="runner-time">18:31</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Henry%20Strait22288700.html">Henry Strait</a></span><span class="runner-time">18:50</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Santiago%20Valenzuela23821078.html">Santiago Valenzuela</a></span><span class="runner-time">18:50</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Paxton%20Rose23349712.html">Paxton Rose</a></span><span class="runner-time">18:59</span><div class="perf-bar" style="width:79%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Mens_5000_Meters_Reserve_Boys_24_race_page.html">View Full Meet Results →</a>
-    </article>
-
-    <article>
-      <h2>SEC Jamboree #2 — Men's Varsity Boys</h2>
-      <p>Tue Sep 24 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="mens_team/Nicholas%20Yuan21615273.html">Nicholas Yuan</a></span><span class="runner-time">17:20</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="mens_team/Bruno%20Cifaldi21147176.html">Bruno Cifaldi</a></span><span class="runner-time">17:32</span><div class="perf-bar" style="width:87%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="mens_team/Matthew%20Guikema23349678.html">Matthew Guikema</a></span><span class="runner-time">17:39</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="mens_team/Oskar%20MacArthur23349698.html">Oskar MacArthur</a></span><span class="runner-time">17:39</span><div class="perf-bar" style="width:83%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Mens_5000_Meters_Varsity_Boys_24_race_page.html">View Full Meet Results →</a>
-    </article>
-
-    <article>
-      <h2>SEC Jamboree #2 — Women's Varsity Girls</h2>
-      <p>Tue Sep 24 2024</p>
-      <h3>Top Skyline Runners</h3>
-      <div class="runner-list">
-        <div class="runner-row"><span class="runner-place p1" role="img" aria-label="1st">1</span><span class="runner-name"><a href="womens_team/Lucia%20Llanes26328690.html">Lucia Llanes</a></span><span class="runner-time">19:19</span><div class="perf-bar" style="width:95%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p2" role="img" aria-label="2nd">2</span><span class="runner-name"><a href="womens_team/Isla%20Tharp23349719.html">Isla Tharp</a></span><span class="runner-time">20:17</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p3" role="img" aria-label="3rd">3</span><span class="runner-name"><a href="womens_team/Becca%20Van%20Lent24262808.html">Becca Van Lent</a></span><span class="runner-time">20:17</span><div class="perf-bar" style="width:76%" aria-hidden="true"></div></div>
-        <div class="runner-row"><span class="runner-place p4" role="img" aria-label="4th">4</span><span class="runner-name"><a href="womens_team/Alison%20Kauffman23564882.html">Alison Kauffman</a></span><span class="runner-time">22:09</span><div class="perf-bar" style="width:54%" aria-hidden="true"></div></div>
-      </div>
-      <a class="meet-link" href="meets/SEC-HS_Jamboree_2_(Red)_Womens_5000_Meters_Varsity_Girls_24_race_page.html">View Full Meet Results →</a>
-    </article>
-
+    </div><!-- end .race-grid -->
   </main>
 
-  <!--roster-->
+  <!-- Roster -->
   <section class="roster-section" aria-label="Team Roster">
     <button
       class="roster-toggle"
@@ -422,11 +437,12 @@
     <p>All data gathered from Garrett's race spreadsheet. Thanks Garrett!</p>
   </footer>
 
- <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode" title="Toggle color theme">
-  Night Mode
+  <button class="theme-toggle" id="theme-btn" aria-label="Toggle dark/light mode" title="Toggle color theme">
+    Night Mode
   </button>
 
   <script>
+    // Roster toggle
     const rosterBtn  = document.getElementById('roster-btn');
     const rosterList = document.getElementById('roster-list');
 
@@ -436,6 +452,21 @@
       rosterList.hidden = expanded;
     });
 
+    // Auto expand roster on desktop so aria state is accurate
+    function syncRoster() {
+      if (window.innerWidth >= 1100) {
+        rosterBtn.setAttribute('aria-expanded', 'true');
+        rosterList.removeAttribute('hidden');
+      } else {
+        rosterBtn.setAttribute('aria-expanded', 'false');
+        rosterList.setAttribute('hidden', '');
+      }
+    }
+    syncRoster();
+    window.addEventListener('resize', syncRoster);
+
+
+    // Dark / Light mode toggle
     const themeBtn = document.getElementById('theme-btn');
     let darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -451,9 +482,8 @@
         document.documentElement.style.removeProperty('--color-muted');
         document.documentElement.style.removeProperty('--color-runner-a');
         document.documentElement.style.removeProperty('--color-runner-b');
-        themeBtn.textContent = 'Night Mode';      
-      } 
-      else {
+        themeBtn.textContent = 'Night Mode';
+      } else {
         document.documentElement.style.setProperty('--color-bg',       '#f0f4fa');
         document.documentElement.style.setProperty('--color-surface',  '#ffffff');
         document.documentElement.style.setProperty('--color-surface2', '#e4eaf5');
@@ -473,8 +503,38 @@
       applyTheme();
     });
 
-    // Init to system preference
     applyTheme();
+
+
+    // Sort races (JS component)
+    const sortSelect = document.getElementById('sort-select');
+    const raceGrid = document.querySelector('.race-grid');
+    const articles = Array.from(document.querySelectorAll('article'));
+    const originalOrder = [...articles];
+
+    function parseDate(article) {
+      return new Date(article.querySelector('p').textContent.trim());
+    }
+
+    function sortRaces() {
+      const value = sortSelect.value;
+      let sorted;
+
+      if (value === 'default') {
+        sorted = [...originalOrder];
+      } else {
+        sorted = [...articles].sort((a, b) => {
+          if (value === 'date-asc')  return parseDate(a) - parseDate(b);
+          if (value === 'date-desc') return parseDate(b) - parseDate(a);
+          if (value === 'name-asc')  return a.querySelector('h2').textContent.localeCompare(b.querySelector('h2').textContent);
+          if (value === 'name-desc') return b.querySelector('h2').textContent.localeCompare(a.querySelector('h2').textContent);
+        });
+      }
+
+      sorted.forEach(card => raceGrid.appendChild(card));
+    }
+
+    sortSelect.addEventListener('change', sortRaces);
   </script>
 </body>
 </html>
