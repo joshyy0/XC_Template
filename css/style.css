@@ -77,18 +77,21 @@
     --color-border:   #a8bcd8;
 
     /* Darkened gold — 7.1:1 on white */
-    --color-accent:   #8a5e00;
+    --color-accent: #7a5200;
     --color-accent2:  #6b4800;
 
     /* Near-black text — 17:1 on white */
-    --color-text:     #0d1a2e;
+    --color-text: #0d1a2e;
     /* Darkened muted — 5.8:1 on white */
-    --color-muted:    #3d5c80;
+    --color-muted: #3d5272;
 
     --color-runner-a: #dce8f8;
     --color-runner-b: #cfddf5;
 
     --shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+    footer {
+      color: #3d5272; /* your CSS already sets --color-muted to this, but JS overrides it */
+    }
   }
 }
 
@@ -257,7 +260,7 @@ header img {
 
 .header-text p {
   font-size: 0.75rem;
-  color: #93afd4;
+  color: #b8d0ec;  
   margin-top: 4px;
   line-height: 1.4;
 }
@@ -274,7 +277,7 @@ header img {
   z-index: 500;
   padding: 10px 16px;
   border-radius: var(--radius);
-  background: var(--color-accent);
+  background: #f5c842;
   color: #000;
   border: none;
   font-family: var(--font-display);
@@ -425,16 +428,18 @@ article h3 {
   font-weight: 500;
   flex: 1;
   text-align: left;
-  color: var(--color-accent);
+  color: var(--color-text);
   letter-spacing: 0.01em;
 }
+
 .runner-name a {
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration: none;
 }
+
 .runner-name a:hover,
 .runner-name a:focus {
-  color: var(--color-accent2);
+  color: var(--color-accent2);   /* was hardcoded #f5c842 */
   text-decoration: underline;
 }
 
@@ -490,7 +495,7 @@ article h3 {
 .runner-place.p1 { background: #f5c842; color: #000; }
 .runner-place.p2 { background: #b8c4ce; color: #000; }
 .runner-place.p3 { background: #7a3e0a; color: #fff; }
-.runner-place.p4 { background: var(--color-border); color: var(--color-muted); }
+.runner-place.p4 { background: #4a5568; color: #ffffff; }
 
 
 /* 13. MEET RESULTS LINK */
@@ -599,7 +604,6 @@ article h3 {
   text-decoration: none;
 }
 
-
 /* 15. FOOTER */
 footer {
   background: var(--color-surface2);
@@ -609,7 +613,6 @@ footer {
   font-size: 0.75rem;
   color: var(--color-muted);
 }
-
 
 /* 
   16. ATHLETE PROFILE PAGES -
@@ -629,7 +632,6 @@ main img {
   display: block;
   margin: 16px auto 20px;
 }
-
 
 /* 
   17. TABLET LAYOUT - min-width: 700px
@@ -654,7 +656,6 @@ main img {
     max-width: none;
     margin: 0;
   }
-
 
   main {
     padding: 28px 32px;
