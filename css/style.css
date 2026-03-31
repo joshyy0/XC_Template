@@ -92,12 +92,12 @@
   }
 }
 
-
 /* 
   3. RESET & BASE - 
      Mobile-first: base styles target small screens
      max-width removed at tablet+ breakpoints (Section 17)
 */
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -131,6 +131,7 @@ a {
   color: var(--color-accent);
   text-decoration: none;
 }
+
 a:hover,
 a:focus {
   color: var(--color-accent2);
@@ -141,7 +142,6 @@ a:focus-visible {
   outline-offset: 3px;
   border-radius: 3px;
 }
-
 
 /* 
   4. SKIP LINK - 
@@ -164,7 +164,6 @@ a:focus-visible {
 .skip-link:focus {
   top: 0;
 }
-
 
 /* 
   5. ANIMATIONS & @keyframes -
@@ -193,7 +192,6 @@ a:focus-visible {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-
 /* 
   6. PREFERS-REDUCED-MOTION -
      Disables all animations and transitions globally for
@@ -206,7 +204,6 @@ a:focus-visible {
     transition-duration:       0.01ms !important;
   }
 }
-
 
 /* 
   7. HEADER
@@ -265,7 +262,6 @@ header img {
   line-height: 1.4;
 }
 
-
 /* 
   8. FLOATING ACTION BUTTON -
      Text label instead of icon for better accessibility 
@@ -290,14 +286,15 @@ header img {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
   transition: transform var(--transition), background var(--transition);
 }
+
 .theme-toggle:hover {
   transform: scale(1.06);
 }
+
 .theme-toggle:focus-visible {
   outline: 2px solid var(--color-accent2);
   outline-offset: 3px;
 }
-
 
 /* 9. MAIN CONTENT AREA */
 main {
@@ -315,7 +312,6 @@ main > h2 {
   padding-bottom: 10px;
   border-bottom: 2px solid var(--color-border);
 }
-
 
 /* 
   10. RACE CARDS -
@@ -392,7 +388,6 @@ article h3 {
   color: var(--color-muted);
   padding: 10px 14px 6px;
 }
-
 
 /* 
   11. RUNNER ROWS -
